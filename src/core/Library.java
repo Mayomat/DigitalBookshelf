@@ -76,4 +76,44 @@ public class Library {
             }
         }
     }
+
+    public List<Book> searchByTitle(String title) {
+        List<Book> result = new ArrayList<>();
+        String search = title.toLowerCase().trim();
+
+        for (Book b : books) {
+            if (b.getTitle().toLowerCase().contains(search)) {
+                result.add(b);
+            }
+        }
+        return result;
+    }
+
+    public List<Book> searchByAuthor(String author) {
+        List<Book> result = new ArrayList<>();
+        String search = author.toLowerCase().trim();
+
+        for (Book b : books) {
+            if (b.getAuthor().toLowerCase().contains(search)) {
+                result.add(b);
+            }
+        }
+        return result;
+    }
+
+    public List<Book> searchByGenre(String genre) {
+        List<Book> result = new ArrayList<>();
+        String search = genre.toLowerCase().trim();
+
+        for (Book b : books) {
+            if (b.getGenre().toLowerCase().contains(search)) {
+                result.add(b);
+            }
+        }
+        return result;
+    }
+
+    public List<Book> getBooks() { return books; }
+    public List<User> getUsers() { return users; }
+    public List<Loan> getLoans() { return loans; }
 }
