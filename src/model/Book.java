@@ -1,4 +1,5 @@
 package src.model;
+
 public class Book {
     private static int nextId = 1;
 
@@ -21,5 +22,6 @@ public class Book {
     public String getAuthor() { return author; }
     public String getGenre() { return genre; }
     public boolean isAvailable() { return available; }
-    public void setAvailable(boolean available) { this.available = available; }
+    public void loan() { this.available = false; }
+    public void bookReturn() { this.available = true; }
 }
